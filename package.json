@@ -1,0 +1,45 @@
+{
+  "name": "ckl-challenge",
+  "version": "1.0.0",
+  "description": "Front-end challenge for learning the technologies used at CKL",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "NODE_ENV=production webpack -p --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/DiegoBousfield/ckl-01_frontend_diego_bousfield.git"
+  },
+  "author": "Diego Bousfield",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/DiegoBousfield/ckl-01_frontend_diego_bousfield#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.18",
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.0.4",
+    "style-loader": "^0.20.2",
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-middleware": "^2.0.6",
+    "webpack-hot-middleware": "^2.21.1",
+    "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "babel-loader": "^7.1.4",
+    "express": "^4.16.2",
+    "immutable": "^3.8.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-promise-middleware": "^5.0.0",
+    "redux-thunk": "^2.2.0"
+  }
+}

@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+.app-header {
+    height: 56px;
+    border-bottom: 1px solid #979797;
+}
+
+.app-header div {
+    height: inherit;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+    padding-right: 31px;
+}
+
+.app-nav {
+    line-height: 56px;
+    font-size: 14px;
+    font-family: "lato", sans-serif;
+    font-weight: thin;
+    width: 0%;
+    transition: 0.5s;
+    overflow-x: hidden;
+}
+
+.app-nav a {
+    background-color: white;
+    display: block;
+    position: relative;
+    padding-left: 10px;
+    color: #3e433e;
+    text-decoration: none;
+}
+
+.menu {
+    padding-left: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.menu:active {
+    -webkit-tap-highlight-color: transparent;
+}
+
+#toggle {
+    display: none;
+}
+
+#toggle:checked + .app-nav {
+    display: block;
+    width: 30%;
+    transition: 0.5s;
+}
+
+@media screen and (min-width: 1170px) {
+    .app-header {
+        display: flex;
+    }
+
+    .app-header div {
+        width: 50%;
+    }
+
+    .logo {
+        text-align: left;
+        margin-left: 131px;
+    }
+
+    .app-nav {
+        margin-right: 146px;
+        text-align: right;
+        display: block;
+        width: 100%;
+        overflow-x: visible;
+        transition: none;
+    }
+    .app-nav a {
+        margin-right: 29px;
+        display: inline;
+    }
+
+    .menu {
+        display: none;
+    }
+}
