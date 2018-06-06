@@ -1,14 +1,19 @@
 import React from "react";
-import Header from "./header/Header";
-import Articles from "./main/Articles";
-import LinkItem from "./LinkItem";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./Header";
+import "../../public/css/Header.css";
+import Articles from "./Articles";
 
-const App = ({ match }) => (
-  <div>
-    <Header />
-    <Articles />
-    <LinkItem match={match} />
-  </div>
+const App = () => (
+  <Router>
+    <div>
+      <Header />
+      <Switch>
+        <Route path="/:subject" component={Articles} />
+        <Route path="/" component={Articles} />
+      </Switch>
+    </div>
+  </Router>
 );
 
 export default App;

@@ -1,44 +1,24 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { filterSubject } from "../actions/actionCreator";
+import { Link } from "react-router-dom";
+import { fetchSubject } from "../actions/actionCreator";
 
 class LinkItem extends Component {
   constructor(props) {
     super(props);
-    this.fetchSubject = this.fetchSubject.bind(this);
+    this.findSubject = this.findSubject.bind(this);
   }
-  fetchSubject(e) {
-    const { children, articles } = this.props;
-    if (this.props.to) {
-      this.props.filterSubject(articles);
-    } else {
-      const next = articles.filter(article => article.subject === children);
-      this.props.filterSubject(next);
-    }
+  findSubject(e) {
+    this.props.fetchSubject(this.props.to);
   }
 
   render() {
     return (
-      <Link
-        to={this.props.to ? this.props.to : `/${this.props.children}`}
-        className="uppercase"
-        href="#"
-        onClick={this.fetchSubject}
-      >
+      <Link to={this.props.to} onClick={this.findSubject} className="uppercase">
         {this.props.children}
       </Link>
     );
   }
 }
 
-const mapStateToProps = ({ articles }) => {
-  return { articles };
-};
-
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ filterSubject }, dispatch);
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(LinkItem);
+export default connect(null, { fetchSubject })(LinkItem);

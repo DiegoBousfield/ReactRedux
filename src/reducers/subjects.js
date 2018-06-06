@@ -1,14 +1,12 @@
-import { FILTER_SUBJECT } from "../actions/actionCreator";
+import _ from "lodash";
+import { FETCH_SUBJECT } from "../actions/actionCreator";
 
-function subjects(state = [], action) {
+export default function subjects(state = {}, action) {
   switch (action.type) {
-    case FILTER_SUBJECT:
-      return action.subject;
+    case FETCH_SUBJECT:
+      return { ...state, ...action.payload.data };
     default:
       return state;
   }
-
   return state;
 }
-
-export default subjects;
