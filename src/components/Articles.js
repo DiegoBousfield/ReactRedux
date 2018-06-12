@@ -7,9 +7,9 @@ import { fetchArticles, fetchSubject } from "../actions/actionCreator";
 import "../../public/css/Articles.css";
 
 class Articles extends Component {
-  componentWillMount() {
+  componentDidMount() {
     const { match, fetchSubject, fetchArticles } = this.props;
-    if (match.path == "/:subject") {
+    if (match.path === "/:subject") {
       return fetchSubject(match.params.subject);
     }
     return fetchArticles();
@@ -28,9 +28,9 @@ class Articles extends Component {
       <div className="posts ">
         <CSSTransitionGroup
           transitionName="fade"
-          transitionAppearTimeout={1000}
-          transitionEnterTimeout={1000}
-          transitionLeaveTimeout={1000}
+          transitionAppearTimeout={500}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
         >
           {this.renderArticle()}
         </CSSTransitionGroup>
@@ -41,10 +41,12 @@ class Articles extends Component {
 
 const mapStateToProps = ({ articles, subjects }, ownProps) => {
   if (ownProps.match.path === "/:subject") {
+    fetchSubject(ownProps.match.path);
     return {
       articles: _.filter(subjects, { subject: ownProps.match.params.subject })
     };
   }
+  fetchArticles();
   return {
     articles
   };
