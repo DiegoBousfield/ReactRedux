@@ -27,20 +27,27 @@ class ArticleItem extends Component {
   render() {
     const { subject, title, id, content, author } = this.props;
     return (
-      <article className={id < 2 ? "heading" : "featured"}>
-        <small>
-          <LinkItem to={subject}>{subject}</LinkItem>
-        </small>
-        <img id={`page${id}`} src={this.getImages()} alt="" />
-        <h1>{title}</h1>
-        <p>{content}</p>
-        <small>{author}</small>
+      <article className="postItem">
+        <LinkItem className="link" to={subject}>
+          {subject}
+        </LinkItem>
         <img
-          style={{ borderRadius: "100%" }}
-          src={authorPhoto}
-          srcSet={`${author2x} 2x`}
-          alt="logo"
+          className="photoArticle"
+          id={`page${id}`}
+          src={this.getImages()}
+          alt=""
         />
+        <h1>{title}</h1>
+        <div className="author">
+          <img
+            style={{ borderRadius: "100%" }}
+            src={authorPhoto}
+            srcSet={`${author2x} 2x`}
+            alt="logo"
+          />
+          <p>by {author}</p>
+        </div>
+        <p className="content">{content}</p>
       </article>
     );
   }

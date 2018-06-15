@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "lato";
+    src: url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXg.woff2);
+}
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +9,7 @@
 
 .uppercase {
     text-transform: uppercase;
+    text-decoration: none;
 }
 .app-header {
     height: 56px;
@@ -26,7 +31,7 @@
 
 .app-nav {
     line-height: 56px;
-    font-size: 14px;
+    font-size: 1em;
     font-family: "lato", sans-serif;
     font-weight: thin;
     width: 0%;
