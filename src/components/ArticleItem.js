@@ -39,12 +39,7 @@ class ArticleItem extends Component {
         />
         <h1>{title}</h1>
         <div className="author">
-          <img
-            style={{ borderRadius: "100%" }}
-            src={authorPhoto}
-            srcSet={`${author2x} 2x`}
-            alt="logo"
-          />
+          <img src={authorPhoto} srcSet={`${author2x} 2x`} alt="logo" />
           <p>by {author}</p>
         </div>
         <p className="content">{content}</p>
