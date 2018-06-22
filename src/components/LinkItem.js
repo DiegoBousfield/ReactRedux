@@ -15,7 +15,11 @@ class LinkItem extends Component {
 
   render() {
     return (
-      <Link to={this.props.to} onClick={this.findSubject} className="uppercase">
+      <Link
+        to={this.props.to}
+        onClick={this.findSubject}
+        className={`uppercase ${this.props.className}`}
+      >
         {this.props.children}
       </Link>
     );

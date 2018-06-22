@@ -28,7 +28,7 @@ class ArticleItem extends Component {
     const { subject, title, id, content, author } = this.props;
     return (
       <article className="postItem">
-        <LinkItem className="link" to={subject}>
+        <LinkItem className={subject} to={subject}>
           {subject}
         </LinkItem>
         <img

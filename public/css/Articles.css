@@ -45,8 +45,24 @@
 
 .postItem .uppercase {
   font: 0.625em lato;
+  line-height: 22.8px;
 }
 
+.politics {
+  color: #ff001f;
+}
+
+.tech {
+  color: #4a90e2;
+}
+
+.science {
+  color: #7cbb37;
+}
+
+.sports {
+  color: #f5a623;
+}
 .photoArticle {
   margin-top: 8px;
   margin-bottom: 15px;
